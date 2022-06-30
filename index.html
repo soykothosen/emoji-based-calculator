@@ -16,6 +16,9 @@
     <!-- Custom CSS-->
     <link href="css/custom.css" rel="stylesheet">
 
+    <!-- External Javascript File-->
+    <script type="text/javascript" src="js/script.js"></script>
+
     <!-- Bootstrap Icon -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
 
@@ -27,43 +30,49 @@
 
     <div class="row m-3 p-2">
 
+
       <div class="col-lg-4 border border-dark shadow-sm rounded-3 container text-center">
 
         <h4 class="my-3">Emoji Based Calculator</h4>
 
+        <!-- Result Display Section Start-->
         <div class="container border bg-light">
 
           <h5 class="p-2 my-2 text-end">
-            <div class="baloo-da-2">1 + 2 </div>
-            <div class="baloo-da-2"> The Result is 3 </div>
+            <div id="display"  class="baloo-da-2 py-2"></div>
+            <div id="resultDisplay" class="baloo-da-2"></div>
           </h5>
 
         </div>
 
+         <!-- Result Display Section End-->
+
+
+          <!-- Buttons Section Start-->
 
         <div class="row mt-4">
 
           <div class="col-3">
 
-            <a type="button" class="btn border btn-light fw-bold w-100">1</a>
+            <a type="button" onclick="number(1)"  id="number1Button" class="btn border btn-light fw-bold w-100">1</a>
 
           </div>
 
           <div class="col-3">
 
-            <a type="button" class="btn btn-light border fw-bold w-100">2</a>
+            <a type="button" onclick="number(2)"  id="number2Button" class="btn btn-light border fw-bold w-100">2</a>
 
           </div>
 
           <div class="col-3">
 
-            <a type="button" class="btn btn-light border fw-bold w-100">3</a>
+            <a type="button" onclick="number(3)"  id="number3Button" class="btn btn-light border fw-bold w-100">3</a>
 
           </div>
 
           <div class="col-3">
 
-            <a type="button" class="btn btn-light border w-100"> &#x1F47D;</a>
+            <a type="button" onclick="operatorButton('add')" id="addButton" class="btn btn-light border w-100"> &#x1F47D; </a>
 
           </div>
 
@@ -72,25 +81,25 @@
 
           <div class="col-3">
 
-            <a type="button" class="btn btn-light border fw-bold w-100">4</a>
+            <a type="button" onclick="number(4)" id="number4Button" class="btn btn-light border fw-bold w-100">4</a>
 
           </div>
 
           <div class="col-3">
 
-            <a type="button" class="btn btn-light border fw-bold w-100">5</a>
+            <a type="button" onclick="number(5)" id="number5Button" class="btn btn-light border fw-bold w-100">5</a>
 
           </div>
 
           <div class="col-3">
 
-            <a type="button" class="btn btn-light border fw-bold w-100">6</a>
+            <a type="button" onclick="number(6)" id="number6Button" class="btn btn-light border fw-bold w-100">6</a>
 
           </div>
 
           <div class="col-3">
 
-            <a type="button" class="btn btn-light border w-100">&#x1F480;</a>
+            <a type="button" onclick="operatorButton('sub')" id="subButton" class="btn btn-light border w-100"> &#x1F480; </a>
 
           </div>
 
@@ -100,25 +109,25 @@
 
           <div class="col-3">
 
-            <a type="button" class="btn btn-light border fw-bold w-100">7</a>
+            <a type="button" onclick="number(7)" id="number7Button" class="btn btn-light border fw-bold w-100">7</a>
 
           </div>
 
           <div class="col-3">
 
-            <a type="button" class="btn btn-light border fw-bold w-100">8</a>
+            <a type="button" onclick="number(8)" id="number8Button" class="btn btn-light border fw-bold w-100">8</a>
 
           </div>
 
           <div class="col-3">
 
-            <a type="button" class="btn btn-light border fw-bold w-100">9</a>
+            <a type="button" onclick="number(9)" id="number9Button" class="btn btn-light border fw-bold w-100">9</a>
 
           </div>
 
           <div class="col-3">
 
-            <a type="button" class="btn btn-light border w-100">&#x1F47B;</a>
+            <a type="button" onclick="operatorButton('mul')" id="mulButton" class="btn btn-light border w-100"> &#x1F47B; </a>
 
           </div>
 
@@ -128,34 +137,41 @@
 
           <div class="col-3">
 
-            <a type="button" class="btn btn-light border fw-bold w-100">0</a>
+            <a type="button" id="zeroButton" onclick="Zero()" class="btn btn-light border fw-bold w-100">0</a>
 
           </div>
 
           <div class="col-3">
 
-            <a type="button" class="btn btn-light border fw-bold w-100">C</a>
+            <a type="button" onclick="ButtonC()" id="cButton" class="btn btn-light border fw-bold w-100">C</a>
 
           </div>
 
           <div class="col-3">
 
-            <a type="button" class="btn btn-light border fw-bold w-100">=</a>
+            <a type="button" onclick="Equal()" id="equalButton" class="btn btn-light border fw-bold w-100">=</a>
 
           </div>
 
           <div class="col-3">
 
-            <a type="button" class="btn btn-light border w-100">&#x1F631;</a>
+            <a type="button" onclick="operatorButton('divi')" id="divisionButton" class="btn btn-light border w-100"> &#x1F631; </a>
 
           </div>
 
         </div>
+
+         <!-- Buttons Section End-->
      
 
       </div>
 
     </div>
+
+
+  
+
+  
 
     <!-- Script for Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
