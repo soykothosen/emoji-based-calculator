@@ -56,7 +56,7 @@ function Zero (){
 
         Escape1:{
 
-            if(oprnd1[0] == 0 &&  $("#zeroButton").text() == 0  ){
+            if(oprnd1[0] == 0 &&  $("#zeroButton").text() == 0 && oprnd1.length == 1  ){
                 break Escape1;
             }
 
@@ -73,7 +73,7 @@ function Zero (){
 
         Escape2: {
 
-            if(oprnd2[0] == 0 &&  $("#zeroButton").text() == 0  ){
+            if(oprnd2[0] == 0 &&  $("#zeroButton").text() == 0 && oprnd2.length == 1 ){
                 break Escape2;
             }
 
