@@ -47,7 +47,8 @@ function number (value){
 
 function Zero (){
 
-    
+    $("#resultDisplay").text(""); // after calculating 1 time it will clear the display
+ 
     if(firstOprnd==null){
 
         //console.log(oprnd1.length);
