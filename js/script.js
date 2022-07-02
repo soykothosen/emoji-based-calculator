@@ -162,11 +162,13 @@ function Zero (){
 function Equal (){
 
 
+    //var route = "https://api.emoji-calculator-soykot.code-studio4.com/calculate"
+    var route = "http://localhost:8081/calculate"
 
     if(operator == "add"){
 
 
-        $.post("https://api.emoji-calculator-soykot.code-studio4.com/calculate",
+        $.post(route,
         {
         
             operand1: firstOprnd,
@@ -195,7 +197,7 @@ function Equal (){
     if(operator == "sub"){
 
 
-        $.post("https://api.emoji-calculator-soykot.code-studio4.com/calculate",
+        $.post(route,
         {
         
             operand1: firstOprnd,
@@ -224,7 +226,7 @@ function Equal (){
     if(operator == "mul"){
 
 
-        $.post("https://api.emoji-calculator-soykot.code-studio4.com/calculate",
+        $.post(route,
         {
         
             operand1: firstOprnd,
@@ -254,7 +256,7 @@ function Equal (){
     if(operator == "divi"){
 
 
-        $.post("https://api.emoji-calculator-soykot.code-studio4.com/calculate",
+        $.post(route,
         {
         
             operand1: firstOprnd,
