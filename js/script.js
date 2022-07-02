@@ -7,7 +7,7 @@ function Display( value ){
 
     $("#display").text(value);
 
-}
+} // end of display function
 
 
 //getting value from 1-9 number button
@@ -41,7 +41,7 @@ function number (value){
         Display(display);
     }
 
-}
+}  // end of number function
 
 // getting value from Zero Button
 
@@ -66,7 +66,7 @@ function Zero (){
             display = display + $("#zeroButton").text();
             Display(display);
 
-        }
+        } // end of escape1
 
 
     } else{
@@ -82,7 +82,7 @@ function Zero (){
             display = display + $("#zeroButton").text();
             Display(display);
 
-        }
+        } // end of escape2
 
        
     }
@@ -102,7 +102,7 @@ function Zero (){
 
     Display(display);
 
-  }
+  }  // end of buttonc function
 
 
   // for operators button
@@ -153,60 +153,194 @@ function Zero (){
     }
     
 
-}
+} //  // end of operator function
 
-// Equal Button
+
+
+// Equal Button and api call
 
 function Equal (){
 
-    var result;
+
 
     if(operator == "add"){
-        result = parseInt(firstOprnd) + parseInt(oprnd2);
-        $("#resultDisplay").text("The result is "+ result);
 
-        display = "";
-        oprnd1="", oprnd2="", operator=null;
-        firstOprnd=null;
-        result = null;
+
+        $.post("https://api.emoji-calculator-soykot.code-studio4.com/calculate",
+        {
+        
+            operand1: firstOprnd,
+            operand2: oprnd2,
+            operation: "add", 
+
+        },
+
+        function(data, status){
+            
+            console.log(data);
+
+            $("#resultDisplay").text(data);
+
+            display = "";
+            oprnd1="", oprnd2="", operator=null;
+            firstOprnd=null;
+            result = null;
+    
+        });
+
+       
 
     }
 
     if(operator == "sub"){
-        result = parseInt(firstOprnd) - parseInt(oprnd2);
-        $("#resultDisplay").text("The result is "+ result);
 
-        display = "";
-        oprnd1="", oprnd2="", operator=null;
-        firstOprnd=null;
-        result = null;
+
+        $.post("https://api.emoji-calculator-soykot.code-studio4.com/calculate",
+        {
+        
+            operand1: firstOprnd,
+            operand2: oprnd2,
+            operation: "sub", 
+
+        },
+
+        function(data, status){
+            
+            console.log(data);
+
+            $("#resultDisplay").text(data);
+
+            display = "";
+            oprnd1="", oprnd2="", operator=null;
+            firstOprnd=null;
+            result = null;
+    
+        });
+
+       
 
     }
 
     if(operator == "mul"){
-        result = parseInt(firstOprnd) * parseInt(oprnd2);
-        $("#resultDisplay").text("The result is "+ result);
 
-        display = "";
-        oprnd1="", oprnd2="", operator=null;
-        firstOprnd=null;
-        result = null;
+
+        $.post("https://api.emoji-calculator-soykot.code-studio4.com/calculate",
+        {
+        
+            operand1: firstOprnd,
+            operand2: oprnd2,
+            operation: "mul", 
+
+        },
+
+        function(data, status){
+            
+            console.log(data);
+
+            $("#resultDisplay").text(data);
+
+            display = "";
+            oprnd1="", oprnd2="", operator=null;
+            firstOprnd=null;
+            result = null;
+    
+        });
+
+       
 
     }
+
 
     if(operator == "divi"){
-        result = parseInt(firstOprnd) / parseInt(oprnd2);
-        $("#resultDisplay").text("The result is "+ result);
 
-        display = "";
-        oprnd1="", oprnd2="", operator=null;
-        firstOprnd=null;
-        result = null;
+
+        $.post("https://api.emoji-calculator-soykot.code-studio4.com/calculate",
+        {
+        
+            operand1: firstOprnd,
+            operand2: oprnd2,
+            operation: "divi", 
+
+        },
+
+        function(data, status){
+            
+            console.log(data);
+
+            $("#resultDisplay").text(data);
+
+            display = "";
+            oprnd1="", oprnd2="", operator=null;
+            firstOprnd=null;
+            result = null;
+    
+        });
+
+       
 
     }
 
 
 
-}
+
+
+}  // end of equal function
+
+
+
+
+// // Equal Button - frontend coding
+
+// function Equal (){
+
+//     var result;
+
+//     if(operator == "add"){
+//         result = parseInt(firstOprnd) + parseInt(oprnd2);
+//         $("#resultDisplay").text("The result is "+ result);
+
+//         display = "";
+//         oprnd1="", oprnd2="", operator=null;
+//         firstOprnd=null;
+//         result = null;
+
+//     }
+
+//     if(operator == "sub"){
+//         result = parseInt(firstOprnd) - parseInt(oprnd2);
+//         $("#resultDisplay").text("The result is "+ result);
+
+//         display = "";
+//         oprnd1="", oprnd2="", operator=null;
+//         firstOprnd=null;
+//         result = null;
+
+//     }
+
+//     if(operator == "mul"){
+//         result = parseInt(firstOprnd) * parseInt(oprnd2);
+//         $("#resultDisplay").text("The result is "+ result);
+
+//         display = "";
+//         oprnd1="", oprnd2="", operator=null;
+//         firstOprnd=null;
+//         result = null;
+
+//     }
+
+//     if(operator == "divi"){
+//         result = parseInt(firstOprnd) / parseInt(oprnd2);
+//         $("#resultDisplay").text("The result is "+ result);
+
+//         display = "";
+//         oprnd1="", oprnd2="", operator=null;
+//         firstOprnd=null;
+//         result = null;
+
+//     }
+
+
+
+// }  // end of equal function
 
 
