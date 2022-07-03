@@ -165,125 +165,57 @@ function Equal (){
     //var route = "https://api.emoji-calculator-soykot.code-studio4.com/calculate"
     var route = "http://localhost:8081/calculate"
 
-    if(operator == "add"){
-
+    // Function for post method
+    function postingToserver( value ){
 
         $.post(route,
-        {
-        
-            operand1: firstOprnd,
-            operand2: oprnd2,
-            operation: "add", 
-
-        },
-
-        function(data, status){
+            {
             
-            console.log(data);
-
-            $("#resultDisplay").text(data);
-
-            display = "";
-            oprnd1="", oprnd2="", operator=null;
-            firstOprnd=null;
-            result = null;
+                operand1: firstOprnd,
+                operand2: oprnd2,
+                operation: value, 
     
-        });
+            },
+    
+            function(data, status){
+                
+                console.log(data);
+    
+                $("#resultDisplay").text(data);
+    
+                display = "";
+                oprnd1="", oprnd2="", operator=null;
+                firstOprnd=null;
+                result = null;
+        
+            });
 
-       
+    } // end of function
+
+    if(operator == "add"){
+
+        postingToserver("add")
 
     }
 
     if(operator == "sub"){
 
-
-        $.post(route,
-        {
-        
-            operand1: firstOprnd,
-            operand2: oprnd2,
-            operation: "sub", 
-
-        },
-
-        function(data, status){
-            
-            console.log(data);
-
-            $("#resultDisplay").text(data);
-
-            display = "";
-            oprnd1="", oprnd2="", operator=null;
-            firstOprnd=null;
-            result = null;
-    
-        });
-
-       
+        postingToserver("sub")
 
     }
 
     if(operator == "mul"){
 
-
-        $.post(route,
-        {
-        
-            operand1: firstOprnd,
-            operand2: oprnd2,
-            operation: "mul", 
-
-        },
-
-        function(data, status){
-            
-            console.log(data);
-
-            $("#resultDisplay").text(data);
-
-            display = "";
-            oprnd1="", oprnd2="", operator=null;
-            firstOprnd=null;
-            result = null;
-    
-        });
-
-       
+        postingToserver("mul")
 
     }
 
 
     if(operator == "divi"){
 
-
-        $.post(route,
-        {
-        
-            operand1: firstOprnd,
-            operand2: oprnd2,
-            operation: "divi", 
-
-        },
-
-        function(data, status){
-            
-            console.log(data);
-
-            $("#resultDisplay").text(data);
-
-            display = "";
-            oprnd1="", oprnd2="", operator=null;
-            firstOprnd=null;
-            result = null;
-    
-        });
-
-       
+        postingToserver("divi")
 
     }
-
-
-
 
 
 }  // end of equal function
